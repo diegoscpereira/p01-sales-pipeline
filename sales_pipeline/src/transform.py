@@ -25,9 +25,11 @@ def calculate_category_sales(data: dict[str, list[dict]]) -> dict[str, float]:
         grouped_totals[category] = round(category_total_revenue, 2)
     return grouped_totals
 
+
 # Testing
 if __name__ == "__main__":
     from pathlib import Path
+
     from extract import read_csv
 
     records = read_csv(Path("sales_pipeline/data/raw/sales_2025-11-10.csv"))
