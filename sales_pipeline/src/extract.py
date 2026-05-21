@@ -1,9 +1,6 @@
-# Import pathlib for type hints
 import csv
 from pathlib import Path
 
-
-# Functions
 def read_csv(path: Path) -> list[dict]:
     """
     Function used to read the raw data, synced as .csv daily files. Stores data as a python list.
@@ -13,7 +10,6 @@ def read_csv(path: Path) -> list[dict]:
         reader = csv.DictReader(f)
         records = list(reader)
     return records
-
 
 # Testing
 if __name__ == "__main__":
