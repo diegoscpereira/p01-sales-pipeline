@@ -9,9 +9,11 @@ def data_processing(data: list[dict]) -> dict[str, list[dict]]:
         grouped.setdefault(category, []).append(record)
     return grouped
 
+
 # Testing
 if __name__ == "__main__":
     from pathlib import Path
+
     from extract import read_csv
 
     records = read_csv(Path("sales_pipeline/data/raw/sales_2025-11-10.csv"))
