@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-import glob
+
 
 def read_csv(path: Path) -> list[dict]:
     """
@@ -11,6 +11,7 @@ def read_csv(path: Path) -> list[dict]:
         reader = csv.DictReader(f)
         records = list(reader)
     return records
+
 
 def import_raw_csv_files(path: Path) -> list[dict]:
     """
@@ -31,6 +32,6 @@ def import_raw_csv_files(path: Path) -> list[dict]:
 # Testing
 if __name__ == "__main__":
     func_test = import_raw_csv_files(Path("data/raw/"))
-    print(f'Total records: {len(func_test)}')
+    print(f"Total records: {len(func_test)}")
     print(func_test[0])
     print(func_test[-1])
