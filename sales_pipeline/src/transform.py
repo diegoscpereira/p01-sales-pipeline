@@ -30,9 +30,9 @@ def calculate_category_sales(data: dict[str, list[dict]]) -> dict[str, float]:
 if __name__ == "__main__":
     from pathlib import Path
 
-    from extract import read_csv
+    from extract import import_raw_csv_files
 
-    records = read_csv(Path("sales_pipeline/data/raw/sales_2025-11-10.csv"))
+    records = import_raw_csv_files(Path("data/raw/"))
     grouped = data_processing(records)
     totals = calculate_category_sales(grouped)
     print(totals)
