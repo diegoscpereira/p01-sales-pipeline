@@ -2,6 +2,7 @@ import csv
 from datetime import datetime
 from pathlib import Path
 
+from loguru import logger
 from pydantic import BaseModel, Field, ValidationError
 
 
@@ -25,9 +26,16 @@ def validate_records(records: list[dict]) -> tuple[list[Sales], list[dict]]:
         try:
             sales_data = Sales(**record)  # ← Pydantic validates here
             valid.append(sales_data)
-        except ValidationError:
+        except ValidationError as e:
             invalid.append(record)  # keep the original dict for quarantine
-
+            reasons = "; ".join(
+                f"{err['loc'][0]}={err['input']!r} ({err['msg']})" for err in e.errors()
+            )
+            logger.warning(f"Invalid record: {reasons}")
+    total_records = len(valid) + len(invalid)
+    logger.info(
+        f"{total_records} records assessed: {len(valid)} valid | {len(invalid)} invalid."
+    )
     return valid, invalid
 
 
@@ -46,11 +54,10 @@ def quarantine_records(records: list[dict]) -> Path | None:
     ]
 
     if not records:
-        return
+        return None
 
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    for record in records:
-        record["Datetime_Quarantined"] = now
+    records_to_write = [{**record, "Datetime_Quarantined": now} for record in records]
 
     path = Path("output/quarantine/quarantine.csv")
     write_header_check = not path.exists()
@@ -59,8 +66,8 @@ def quarantine_records(records: list[dict]) -> Path | None:
         writer = csv.DictWriter(f, fieldnames=field_names)
         if write_header_check:
             writer.writeheader()
-        writer.writerows(records)
-
+        writer.writerows(records_to_write)
+    logger.warning(f"{len(records_to_write)} quarantined and saved to {path}")
     return path
 
 

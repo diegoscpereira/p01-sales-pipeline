@@ -1,6 +1,8 @@
 import csv
 from pathlib import Path
 
+from loguru import logger
+
 
 def read_csv(path: Path) -> list[dict]:
     """
@@ -19,13 +21,14 @@ def import_raw_csv_files(path: Path) -> list[dict]:
     It also aggregates the separate files into a single one.
     """
     all_records = []
-    files = path.glob("*.csv")
+    files = list(path.glob("*.csv"))
     for file in files:
         file_date = file.stem.split("_")[1]
         records = read_csv(file)
         for record in records:
             record["Date"] = file_date
         all_records.extend(records)
+    logger.info(f"Read {len(all_records)} records, from {len(files)} files.")
     return all_records
 
 
