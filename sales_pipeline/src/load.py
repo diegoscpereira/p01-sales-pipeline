@@ -9,6 +9,7 @@ def save_totals(totals: dict[str, float], base_path: Path) -> tuple[Path, Path]:
     """
     Saves totals from transformation stage into .parquet and .csv files so it can be consumed downstream.
     """
+    base_path.parent.mkdir(parents=True, exist_ok=True)
     df = pd.DataFrame(totals.items(), columns=["Category", "Total_Revenue"])
 
     parquet_path = base_path.with_suffix(".parquet")
