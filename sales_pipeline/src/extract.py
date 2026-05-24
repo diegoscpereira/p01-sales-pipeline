@@ -32,11 +32,3 @@ def import_raw_csv_files(path: Path) -> list[dict]:
         all_records.extend(records)
     logger.info(f"Read {len(all_records)} records, from {len(files)} files.")
     return all_records
-
-
-# Testing
-if __name__ == "__main__":
-    func_test = import_raw_csv_files(Path("data/raw/"))
-    print(f"Total records: {len(func_test)}")
-    print(func_test[0])
-    print(func_test[-1])

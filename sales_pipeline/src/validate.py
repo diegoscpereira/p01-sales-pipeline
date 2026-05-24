@@ -72,15 +72,3 @@ def quarantine_records(records: list[dict]) -> Path | None:
         writer.writerows(records_to_write)
     logger.warning(f"{len(records_to_write)} quarantined and saved to {path}")
     return path
-
-
-# Testing
-if __name__ == "__main__":
-    from pathlib import Path
-
-    from extract import import_raw_csv_files
-
-    records = import_raw_csv_files(Path("data/raw"))
-    valid, invalid = validate_records(records)
-    quarantine_records(invalid)
-    print(f"Quarantined {len(invalid)} rows")
