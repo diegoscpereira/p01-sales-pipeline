@@ -1,0 +1,25 @@
+Produto,Categoria,Quantidade,Venda
+Espresso,Bebida,22,2.50
+Cappuccino,Bebida,18,3.80
+Latte,Bebida,16,4.20
+Cha Verde,Bebida,10,2.80
+Croissant,Padaria,14,3.50
+Pao de Queijo,Padaria,28,1.80
+Brigadeiro,Doceria,24,2.00
+Pastel de Nata,Padaria,20,2.20
+Bolo de Cenoura,Doceria,8,4.50
+Sanduiche Natural,Lanche,10,5.80
+Suco de Laranja,Bebida,13,3.20
+Agua Mineral,Bebida,24,1.50
+Tosta Mista,Lanche,8,4.20
+Mousse de Chocolate,Doceria,13,3.80
+Cookie,Doceria,18,1.80
+Empada de Frango,Salgado,15,2.80
+Coxinha,Salgado,20,2.50
+Capuccino Gelado,Bebida,9,4.50
+Macaron,Doceria,11,2.80
+Pao na Chapa,Padaria,14,3.20
+Refrigerante,Bebida,19,2.80
+Cheesecake,Doceria,6,5.20
+Salada Caprese,Lanche,5,7.20
+Cha Preto,Bebida,abc,2.80

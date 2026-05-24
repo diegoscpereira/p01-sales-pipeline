@@ -1,0 +1,25 @@
+Produto,Categoria,Quantidade,Venda
+Espresso,Bebida,20,2.50
+Cappuccino,Bebida,15,3.80
+Latte Vanilla,Bebida,12,4.50
+Cha de Camomila,Bebida,6,2.80
+Croissant de Chocolate,Padaria,10,4.00
+Pao de Queijo,Padaria,28,1.80
+Brigadeiro,Doceria,22,2.00
+Pastel de Nata,Padaria,18,2.20
+Bolo de Limao,Doceria,7,4.50
+Sanduiche de Atum,Lanche,8,6.20
+Suco Verde,Bebida,9,4.50
+Agua com Gas,Bebida,12,2.00
+Tosta Mista,Lanche,7,4.20
+Pudim,Doceria,11,3.50
+Cookie,Doceria,-3,1.80
+Empada de Frango,Salgado,15,2.80
+Coxinha,Salgado,19,2.50
+Risole de Camarao,Salgado,9,3.50
+Mocha,Bebida,8,4.80
+Brownie,Doceria,10,3.20
+Pao de Forma,Padaria,14,2.50
+Energetico,Bebida,11,abc
+Salada de Frutas,Lanche,6,5.50
+Tiramisu,Doceria,4,6.50
