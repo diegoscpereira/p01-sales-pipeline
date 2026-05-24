@@ -39,4 +39,4 @@ def configure_logging() -> None:
 # Testing
 if __name__ == "__main__":
     configure_logging()
-    run_pipeline(Path("data/raw"), Path("output/totals"))
+    run_pipeline(Path("sales_pipeline/data/raw"), Path("sales_pipeline/output/totals"))
