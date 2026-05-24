@@ -8,7 +8,7 @@ def data_processing(data: list[Sales]) -> dict[str, list[Sales]]:
     """
     Function that takes a list of dictionaries based on the Sales model and groups the records based on the existing categories.
     """
-    grouped = {}
+    grouped: dict[str, list[Sales]] = {}
     for sale in data:
         category = sale.Categoria
         grouped.setdefault(category, []).append(sale)
@@ -22,7 +22,7 @@ def calculate_category_sales(data: dict[str, list[Sales]]) -> dict[str, float]:
     """
     grouped_totals = {}
     for category, products in data.items():
-        category_total_revenue = 0
+        category_total_revenue = 0.0
         for product in products:
             quantity = product.Quantidade
             sale = product.Venda
