@@ -33,7 +33,10 @@ def configure_logging() -> None:
         level="INFO",
     )
 
-    logger.add(sink="logs/pipeline.log", level="DEBUG", rotation="10 MB")
+    log_path = Path("sales_pipeline/logs/pipeline.log")
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    logger.add(sink=str(log_path), level="DEBUG", rotation="10 MB")
 
 
 # Testing
