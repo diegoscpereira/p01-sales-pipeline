@@ -63,6 +63,7 @@ def quarantine_records(records: list[dict]) -> Path | None:
     records_to_write = [{**record, "Datetime_Quarantined": now} for record in records]
 
     path = Path("output/quarantine/quarantine.csv")
+    path.parent.mkdir(parents=True, exist_ok=True)
     write_header_check = not path.exists()
 
     with open(path, "a", encoding="utf-8", newline="") as f:
