@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
 
+from decorators import log_stage
 from loguru import logger
 
 
@@ -15,6 +16,7 @@ def read_csv(path: Path) -> list[dict]:
     return records
 
 
+@log_stage
 def import_raw_csv_files(path: Path) -> list[dict]:
     """
     Function used to read all .csv from the source folder.

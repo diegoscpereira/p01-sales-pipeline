@@ -1,7 +1,9 @@
+from decorators import log_stage
 from loguru import logger
 from validate import Sales
 
 
+@log_stage
 def data_processing(data: list[Sales]) -> dict[str, list[Sales]]:
     """
     Function that takes a list of dictionaries based on the Sales model and groups the records based on the existing categories.
@@ -13,10 +15,12 @@ def data_processing(data: list[Sales]) -> dict[str, list[Sales]]:
     return grouped
 
 
+@log_stage
 def calculate_category_sales(data: dict[str, list[Sales]]) -> dict[str, float]:
     """
     Function used to calculate total daily revenue for each category within the Sales model.
     """
+    raise ValueError("deliberate test error")   # ← temporary
     grouped_totals = {}
     for category, products in data.items():
         category_total_revenue = 0

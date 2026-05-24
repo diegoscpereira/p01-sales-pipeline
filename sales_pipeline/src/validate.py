@@ -2,6 +2,7 @@ import csv
 from datetime import datetime
 from pathlib import Path
 
+from decorators import log_stage
 from loguru import logger
 from pydantic import BaseModel, Field, ValidationError
 
@@ -14,6 +15,7 @@ class Sales(BaseModel):
     Date: str = Field(min_length=1)
 
 
+@log_stage
 def validate_records(records: list[dict]) -> tuple[list[Sales], list[dict]]:
     """
     Function used to run Pydantic validation tests after reading the raw .csv files from raw.
@@ -39,6 +41,7 @@ def validate_records(records: list[dict]) -> tuple[list[Sales], list[dict]]:
     return valid, invalid
 
 
+@log_stage
 def quarantine_records(records: list[dict]) -> Path | None:
     """
     Saves invalid records from the `validate_records` function into a quarantine csv file.
