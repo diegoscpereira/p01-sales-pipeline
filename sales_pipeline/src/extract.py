@@ -24,7 +24,7 @@ def import_raw_csv_files(path: Path) -> list[dict]:
         file_date = file.stem.split("_")[1]
         records = read_csv(file)
         for record in records:
-            record["date"] = file_date
+            record["Date"] = file_date
         all_records.extend(records)
     return all_records
 
