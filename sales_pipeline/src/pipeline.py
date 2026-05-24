@@ -39,7 +39,6 @@ def configure_logging() -> None:
     logger.add(sink=str(log_path), level="DEBUG", rotation="10 MB")
 
 
-# Testing
 if __name__ == "__main__":
     configure_logging()
     run_pipeline(Path("sales_pipeline/data/raw"), Path("sales_pipeline/output/totals"))
