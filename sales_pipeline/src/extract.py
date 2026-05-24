@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-
+import glob
 
 def read_csv(path: Path) -> list[dict]:
     """
@@ -12,9 +12,25 @@ def read_csv(path: Path) -> list[dict]:
         records = list(reader)
     return records
 
+def import_raw_csv_files(path: Path) -> list[dict]:
+    """
+    Function used to read all .csv from the source folder.
+    It also aggregates the separate files into a single one.
+    """
+    all_records = []
+    files = path.glob("*.csv")
+    for file in files:
+        file_date = file.stem.split("_")[1]
+        records = read_csv(file)
+        for record in records:
+            record["date"] = file_date
+        all_records.extend(records)
+    return all_records
+
 
 # Testing
 if __name__ == "__main__":
-    records = read_csv(Path("data/raw/sales_2025-11-10.csv"))
-    print(records[0])
-    print(len(records))
+    func_test = import_raw_csv_files(Path("data/raw/"))
+    print(f'Total records: {len(func_test)}')
+    print(func_test[0])
+    print(func_test[-1])
