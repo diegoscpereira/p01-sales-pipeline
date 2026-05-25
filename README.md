@@ -61,7 +61,7 @@ This project uses [uv](https://github.com/astral-sh/uv) for environment manageme
 
 ```bash
 # Clone the repo
-git clone https://github.com/dscp1/jornada_de_dados_python_projeto01.git
+git clone https://github.com/dscp1/p01-python-bootcamp-jornada-de-dados-sales-pipeline.git
 cd sales_pipeline
 
 # Create the environment and install dependencies
