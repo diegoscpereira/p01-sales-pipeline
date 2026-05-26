@@ -1,5 +1,9 @@
 # 🏪 Sales Pipeline - Jornada de Dados - Python - P01
 
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-validation-E92063?logo=pydantic&logoColor=white)
+![uv](https://img.shields.io/badge/uv-managed-DE5FE9?logo=uv&logoColor=white)
+
 A daily sales ETL pipeline for a café/bakery, built in Python as a hands-on data engineering exercise. It reads raw daily CSV files, validates each record, quarantines bad data, aggregates sales by category, and writes the results to Parquet and CSV.
 
 ## Overview
