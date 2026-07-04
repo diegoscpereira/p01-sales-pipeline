@@ -1,4 +1,4 @@
-# 🏪 Sales Pipeline - Jornada de Dados - Python - P01
+# 🏪 Sales Pipeline - Python - P01
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Pydantic](https://img.shields.io/badge/Pydantic-validation-E92063?logo=pydantic&logoColor=white)
